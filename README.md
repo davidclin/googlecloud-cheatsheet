@@ -235,6 +235,8 @@ module "privatenet-us-vm" {
 ```
 </details>
 
+<hr>
+
 #### Re-initialize, fmt, plan, and apply
 <pre>
 terraform init
@@ -243,5 +245,12 @@ terraform plan
 terraform apply
 </pre>
 
+<hr>
+
 #### Rinse and repeat 
 If you want to create more VPC networks with VM's, simply re-use one of the existing .tf templates (eg: managementnet.tf)
+
+<hr>
+
+#### Verify
+Go to the console and verify all objects have been created (eg: VPC networks, subnetworks, firewall rules, and virtual machines).
