@@ -8,9 +8,13 @@ unzip FILENAME
 cd $HOME
 source ~/.bashrc
 
+<hr>
+
 #### Launch Code Editor from Cloud Shell
 Launch Cloud Shell<br>
 Open code editor
+
+<hr>
 
 #### Create Terraform files
 mkdir DIRECTORY_NAME<br>
@@ -21,7 +25,6 @@ Create following files under DIRECTORY_NAME:<br>
 - management.tf
 - ./instance/main.tf
 - privatenet.tf (add later)
-- othernet.tf   (add later)
 
 <details>
 <summary>template</summary>
@@ -36,7 +39,6 @@ Details go here
   
 ```
 provider "google" {}
-terraform init
 ```
 </details>
 
@@ -111,26 +113,35 @@ module "managementnet-us-vm" {
 ```
 </details>
 
+<hr>
+
 #### Initialize Terraform
 <pre>
 terraform init
 </pre>
 
-#### Create files
-See below
+<hr>
 
 #### Lint files
+<pre>
 terraform fmt
+</pre>
+
+<hr>
 
 #### Create an execution plan
 <pre>
 terraform plan
 </pre>
 
+<hr>
+
 #### Apply the desired changes
 <pre>
 terraform apply
 </pre>
+
+<hr>
 
 #### Create a new VPC network
 <details>
