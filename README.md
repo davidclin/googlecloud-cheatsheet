@@ -214,9 +214,10 @@ terraform init
 
 <hr>
 
-#### Lint files
+#### Lint and validate files
 <pre>
 terraform fmt
+terraform validate
 </pre>
 
 <hr>
