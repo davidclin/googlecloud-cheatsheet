@@ -1,6 +1,6 @@
 # googlecloud-cheatsheet
 
-## Terraform (Getting Started)
+## Terraform (Getting Started Guide)
 
 #### Install  
 wget URL
