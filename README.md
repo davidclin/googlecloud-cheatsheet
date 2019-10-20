@@ -312,7 +312,7 @@ terraform destroy
 
 <hr>
 
-#### Useful Terrform Commands
+#### Useful Terraform Commands
 <pre>
 $ terraform
 Usage: terraform [-version] [-help] <command> [args]
