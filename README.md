@@ -182,4 +182,13 @@ module "privatenet-us-vm" {
 ```
 </details>
 
-#### Re-initialize, fmt, 
+#### Re-initialize, fmt, plan, and apply
+<pre>
+terraform init
+terraform fmt
+terraform plan
+terraform apply
+</pre>
+
+#### Rinse and repeat 
+If you want to create more VPC networks with VM's, simply re-use one of the existing .tf templates (eg: managementnet.tf)
