@@ -45,7 +45,7 @@ provider "google" {}
 </details>
 
 <details>
-<summary>main.tf</summary>
+<summary>./instance/main.tf</summary>
   
 ```
 variable "instance_name" {}
