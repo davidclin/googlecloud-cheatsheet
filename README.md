@@ -25,6 +25,7 @@ Create following files under DIRECTORY_NAME:<br>
 - management.tf
 - ./instance/main.tf
 - privatenet.tf (add later)
+- mynetwork.tf  (add later)
 
 <details>
 <summary>template</summary>
@@ -109,6 +110,47 @@ module "managementnet-us-vm" {
   instance_name       = "managementnet-us-vm"
   instance_zone       = "us-central1-a"
   instance_subnetwork = google_compute_subnetwork.managementsubnet-us.self_link
+}
+```
+</details>
+
+<details>
+<summary>mynetwork.tf</summary>
+  
+```
+# Create the mynetwork network
+resource "google_compute_network" "mynetwork" {
+  name                    = "mynetwork"
+  auto_create_subnetworks = true
+}
+
+# Create a firewall rule to allow HTTP, SSH, RDP and ICMP traffic on mynetwork
+resource "google_compute_firewall" "mynetwork_allow_http_ssh_rdp_icmp" {
+  name    = "mynetwork-allow-http-ssh-rdp-icmp"
+  network = google_compute_network.mynetwork.self_link
+  allow {
+    protocol = "tcp"
+    ports    = ["22", "80", "3389"]
+  }
+  allow {
+    protocol = "icmp"
+  }
+}
+
+# Create the mynet-us-vm instance
+module "mynet-us-vm" {
+  source              = "./instance"
+  instance_name       = "mynet-us-vm"
+  instance_zone       = "us-central1-a"
+  instance_subnetwork = google_compute_network.mynetwork.self_link
+}
+
+# Create the mynet-eu-vm" instance
+module "mynet-eu-vm" {
+  source              = "./instance"
+  instance_name       = "mynet-eu-vm"
+  instance_zone       = "europe-west1-d"
+  instance_subnetwork = google_compute_network.mynetwork.self_link
 }
 ```
 </details>
