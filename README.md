@@ -3,7 +3,8 @@
 ## Terraform (Getting Started Guide)
 
 #### Install  
-wget URL
+[Download URLs](https://www.terraform.io/downloads.html)<br>
+wget URL  
 unzip FILENAME
 cd $HOME
 source ~/.bashrc
